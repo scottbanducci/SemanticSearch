@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Conversion Results{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Conversion Results</h2>
+    {% if files %}
+        <h3>Successfully Converted</h3>
+        <div class="list-group mt-3">
+            {% for file in files %}
+                <a href="#" class="list-group-item list-group-item-action">{{ file }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if skipped_files %}
+        <h3>Skipped Files</h3>
+        <div class="list-group mt-3">
+            {% for file in skipped_files %}
+                <a href="#" class="list-group-item list-group-item-action">{{ file }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <a href="{{ url_for('home') }}" class="btn btn-primary mt-3">OK</a>
+</div>
+{% endblock %}

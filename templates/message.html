@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Operation Complete{% endblock %}
+
+{% block content %}
+<div class="mt-4">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <p>You will be redirected in 5 seconds. If not, click <a href="{{ redirect_url }}">here</a>.</p>
+</div>
+<script>
+    setTimeout(function() {
+        window.location.href = "{{ redirect_url }}";
+    }, 5000); // Redirect after 5 seconds
+</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5">Semantic Search</h1>
+    <div class="list-group mt-3">
+        <a href="/upload" class="list-group-item list-group-item-action">Upload PDFs</a>
+        <a href="/convert-pdfs" class="list-group-item list-group-item-action">Convert PDFs to texts</a>
+        <a href="/generate-embeddings" class="list-group-item list-group-item-action">Generate Embeddings</a>
+        <a href="/search" class="list-group-item list-group-item-action">Search</a>
+    </div>
+</div>
+{% endblock %}

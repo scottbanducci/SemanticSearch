@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5">Results for "{{ query }}"</h1>
+    <ul class="list-group mt-3">
+        {% for result in results %}
+        <li class="list-group-item">File: {{ result[0] }}, Score: {{ result[1] }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

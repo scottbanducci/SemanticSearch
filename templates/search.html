@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5">Semantic Search</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="query">Search Query</label>
+            <input type="text" class="form-control" id="query" name="query" required>
+        </div>
+        <div class="form-group">
+            <label for="num_results">Number of Results</label>
+            <input type="number" class="form-control" id="num_results" name="num_results" value="5">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+{% endblock %}

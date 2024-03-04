@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Convert PDFs{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <!-- Column for PDFs -->
+        <div class="col-md-6">
+            <h2>PDF Files</h2>
+            <form action="/convert-pdfs-action" method="post">
+                {% for file in pdf_files %}
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="pdfs[]" value="{{ file }}">
+                        <label class="form-check-label">{{ file }}</label>
+                    </div>
+                {% endfor %}
+                <input type="submit" value="Convert Selected PDFs to Text" class="btn btn-primary mt-3">
+            </form>
+        </div>
+        
+        <!-- Column for Directories -->
+        <div class="col-md-6">
+            <h2>Text Directories</h2>
+            <ul>
+                {% for directory in directories %}
+                    <li>{{ directory }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
